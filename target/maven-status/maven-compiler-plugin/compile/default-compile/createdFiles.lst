@@ -1,0 +1,4 @@
+org\example\infrastructure\database\repository\jpa\_JpaRepositoriesMarker.class
+org\example\infrastructure\configuration\ApplicationConfiguration.class
+org\example\ComponentScanMarker.class
+org\example\Main.class
