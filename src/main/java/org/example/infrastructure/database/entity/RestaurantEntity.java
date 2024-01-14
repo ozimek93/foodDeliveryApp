@@ -3,6 +3,9 @@ package org.example.infrastructure.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+import java.util.Set;
+
 @Getter
 @Setter
 @Builder
@@ -26,6 +29,10 @@ public class RestaurantEntity {
     private String phone;
     @Column(name="email")
     private String email;
-
-
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurantId")
+    private Set<DishEntity> dishList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    private List<OrdersEntity> orders;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurantId")
+    private Set<AcceptedAddressesEntity> acceptedAddresses;
 }
